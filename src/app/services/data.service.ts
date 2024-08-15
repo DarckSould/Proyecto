@@ -39,4 +39,22 @@ export class DataService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>(this.apiUrlServicios, servicio, { headers });
   }
+
+  // Método para eliminar una cita
+  deleteCita(id: number): Observable<any> {
+    const url = `${this.apiUrlCitas}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
+  // Método para eliminar un cliente
+  deleteCliente(id: number): Observable<any> {
+    const url = `${this.apiUrlClientes}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
+  // Método para eliminar un servicio
+  deleteServicio(id: number): Observable<any> {
+    const url = `${this.apiUrlServicios}/${id}`;
+    return this.http.delete<any>(url);
+  }
 }

@@ -1,68 +1,106 @@
 <div class="container mt-4">
+
+    <!-- Eliminar Cita -->
+    <h1 class="mt-5 mb-4">Eliminar Cita</h1>
+    <div *ngIf="clientes.length">
+        <select [(ngModel)]="idCitaEliminar" class="form-select">
+            <option *ngFor="let cliente of clientes" [value]="cliente.id">
+                Cita de {{ cliente.nombre }}
+            </option>
+        </select>
+        <button (click)="deleteCita()" class="btn btn-danger mt-2">Eliminar Cita</button>
+    </div>
+
     <!-- Crear Reserva -->
     <h1 class="mb-4">Crear Reserva</h1>
     <form (ngSubmit)="enviarCita()">
-      <div class="form-floating mb-3">
-        <select id="cliente" [(ngModel)]="clienteId" name="clienteId" class="form-select" required>
-          <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
-        </select>
-        <label for="cliente">Cliente:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <select id="servicio" [(ngModel)]="servicioId" name="servicioId" class="form-select" required>
-          <option *ngFor="let servicio of servicios" [value]="servicio.id">{{ servicio.nombre }}</option>
-        </select>
-        <label for="servicio">Servicio:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="date" id="fechaCita" [(ngModel)]="fechaCita" name="fechaCita" class="form-control" required>
-        <label for="fechaCita">Fecha:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" id="estatus" [(ngModel)]="estatus" name="estatus" class="form-control" required>
-        <label for="estatus">Estatus:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" id="comentarios" [(ngModel)]="comentarios" name="comentarios" class="form-control">
-        <label for="comentarios">Comentarios:</label>
-      </div>
-      <button type="submit" class="btn btn-secondary me-3">Enviar Cita</button>
+        <div class="form-floating mb-3">
+            <select id="cliente" [(ngModel)]="clienteId" name="clienteId" class="form-select" required>
+                <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
+            </select>
+            <label for="cliente">Cliente:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <select id="servicio" [(ngModel)]="servicioId" name="servicioId" class="form-select" required>
+                <option *ngFor="let servicio of servicios" [value]="servicio.id">{{ servicio.nombre }}</option>
+            </select>
+            <label for="servicio">Servicio:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="date" id="fechaCita" [(ngModel)]="fechaCita" name="fechaCita" class="form-control" required>
+            <label for="fechaCita">Fecha:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="estatus" [(ngModel)]="estatus" name="estatus" class="form-control" required>
+            <label for="estatus">Estatus:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="comentarios" [(ngModel)]="comentarios" name="comentarios" class="form-control">
+            <label for="comentarios">Comentarios:</label>
+        </div>
+        <button type="submit" class="btn btn-secondary me-3">Enviar Cita</button>
     </form>
-  
+
+    <!-- Eliminar Cliente -->
+    <h1 class="mt-5 mb-4">Eliminar Cliente</h1>
+    <div *ngIf="clientes.length">
+        <select [(ngModel)]="idClienteEliminar" class="form-select">
+            <option *ngFor="let cliente of clientes" [value]="cliente.id">
+                {{ cliente.nombre }}
+            </option>
+        </select>
+        <button (click)="deleteCliente()" class="btn btn-danger mt-2">Eliminar Cliente</button>
+    </div>
+
     <!-- Crear Cliente -->
     <h1 class="mt-5 mb-4">Crear Cliente</h1>
     <form (ngSubmit)="enviarCliente()">
-      <div class="form-floating mb-3">
-        <input type="text" id="nombreCliente" [(ngModel)]="nombreCliente" name="nombreCliente" class="form-control" required>
-        <label for="nombreCliente">Nombre:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="email" id="correoCliente" [(ngModel)]="correoCliente" name="correoCliente" class="form-control" required>
-        <label for="correoCliente">Correo:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" id="telefonoCliente" [(ngModel)]="telefonoCliente" name="telefonoCliente" class="form-control" required>
-        <label for="telefonoCliente">Teléfono:</label>
-      </div>
-      <button type="submit" class="btn btn-secondary me-3">Enviar Cliente</button>
+        <div class="form-floating mb-3">
+            <input type="text" id="nombreCliente" [(ngModel)]="nombreCliente" name="nombreCliente" class="form-control"
+                required>
+            <label for="nombreCliente">Nombre:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" id="correoCliente" [(ngModel)]="correoCliente" name="correoCliente" class="form-control"
+                required>
+            <label for="correoCliente">Correo:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="telefonoCliente" [(ngModel)]="telefonoCliente" name="telefonoCliente"
+                class="form-control" required>
+            <label for="telefonoCliente">Teléfono:</label>
+        </div>
+        <button type="submit" class="btn btn-secondary me-3">Enviar Cliente</button>
     </form>
-  
+
+    <!-- Eliminar Servicio -->
+    <h1 class="mt-5 mb-4">Eliminar Servicio</h1>
+    <div *ngIf="servicios.length">
+        <select [(ngModel)]="idServicioEliminar" class="form-select">
+            <option *ngFor="let servicio of servicios" [value]="servicio.id">
+                {{ servicio.nombre }}
+            </option>
+        </select>
+        <button (click)="deleteServicio()" class="btn btn-danger mt-2">Eliminar Servicio</button>
+    </div>
+
     <!-- Crear Servicio -->
     <h1 class="mt-5 mb-4">Crear Servicio</h1>
     <form (ngSubmit)="enviarServicio()">
-      <div class="form-floating mb-3">
-        <input type="text" id="nombreServicio" [(ngModel)]="nombreServicio" name="nombreServicio" class="form-control" required>
-        <label for="nombreServicio">Nombre:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" id="descripcionServicio" [(ngModel)]="descripcionServicio" name="descripcionServicio" class="form-control" required>
-        <label for="descripcionServicio">Descripción:</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="number" id="precioServicio" [(ngModel)]="precioServicio" name="precioServicio" class="form-control" required>
-        <label for="precioServicio">Precio:</label>
-      </div>
-      <button type="submit" class="btn btn-secondary me-3">Enviar Servicio</button>
+        <div class="form-floating mb-3">
+            <input type="text" id="nombreServicio" [(ngModel)]="nombreServicio" name="nombreServicio"
+                class="form-control" required>
+            <label for="nombreServicio">Nombre:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" id="descripcionServicio" [(ngModel)]="descripcionServicio" name="descripcionServicio"
+                class="form-control" required>
+            <label for="descripcionServicio">Descripción:</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" id="precioServicio" [(ngModel)]="precioServicio" name="precioServicio"
+                class="form-control" required>
+            <label for="precioServicio">Precio:</label>
+        </div>
+        <button type="submit" class="btn btn-secondary me-3">Enviar Servicio</button>
     </form>
-  </div>
-  
