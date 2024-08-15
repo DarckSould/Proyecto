@@ -1,0 +1,127 @@
+<!-- dashboard.component.html -->
+<div class="content">
+  <header>
+    <p class="dashboard-title">Dashboard</p>
+  </header>
+
+  <div class="filters">
+    <div class="filter-group">
+      <label for="monthFilter">Mes:</label>
+      <select id="monthFilter" (change)="onMonthChange($event)">
+        <option *ngFor="let mes of meses" [value]="mes.value">{{ mes.label }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="chart-section" class="dashboard-content">
+    <div class="chart-container">
+      <h2 class="section-title">Gráfico de Ventas</h2>
+      <canvas id="salesChart"></canvas>
+    </div>
+  </div>
+
+  
+<br>
+
+  <div id="clients-section" class="dashboard-content">
+    <div class="table-container">
+      <h2 class="section-title">Clientes</h2>
+      <div class="form-floating mb-3">
+        <input id="searchCliente" class="form-control" type="text" (input)="onSearch($event)" placeholder="Ingresa el nombre del cliente" />
+        <label for="searchCliente">Buscar Cliente:</label>
+      </div>
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Teléfono</th>
+              <th>Fecha Registro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cliente of filteredClientes">
+              <td>{{ cliente.id }}</td>
+              <td>{{ cliente.nombre }}</td>
+              <td>{{ cliente.correo }}</td>
+              <td>{{ cliente.telefono }}</td>
+              <td>{{ cliente.fecha_registro }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+<br>
+
+  <div id="appointments-section" class="dashboard-content">
+    <div class="table-container">
+      <h2 class="section-title">Citas</h2>
+      <div class="form-floating mb-3">
+        <input id="filterClienteId" class="form-control" type="text" (input)="onFilterCitas()" placeholder="Ingresa el ID del cliente" />
+        <label for="filterClienteId">Filtrar por Cliente ID:</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input id="filterServicioId" class="form-control" type="text" (input)="onFilterCitas()" placeholder="Ingresa el ID del servicio" />
+        <label for="filterServicioId">Filtrar por Servicio ID:</label>
+      </div>
+
+<br>
+
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente ID</th>
+              <th>Servicio ID</th>
+              <th>Fecha Cita</th>
+              <th>Estatus</th>
+              <th>Comentarios</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cita of filteredCitas">
+              <td>{{ cita.id }}</td>
+              <td>{{ cita.cliente_id }}</td>
+              <td>{{ cita.servicio_id }}</td>
+              <td>{{ cita.fecha_cita }}</td>
+              <td>{{ cita.estatus }}</td>
+              <td>{{ cita.comentarios }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div id="services-section" class="dashboard-content">
+    <div class="table-container">
+      <h2 class="section-title">Servicios</h2>
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let servicio of servicios">
+              <td>{{ servicio.id }}</td>
+              <td>{{ servicio.nombre }}</td>
+              <td>{{ servicio.descripcion }}</td>
+              <td>{{ servicio.precio }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

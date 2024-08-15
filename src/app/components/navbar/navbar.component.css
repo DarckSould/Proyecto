@@ -1,0 +1,183 @@
+/* Estilos para la barra lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Ajustes para la barra lateral en dispositivos móviles */
+@media (max-width: 767px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+  }
+
+  .d-flex {
+    flex-direction: column;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Elimina el subrayado de los botones con la clase btn-link */
+.btn-link {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Asegura que el color del texto sea el mismo que el color de texto del contenedor */
+}
+
+/* Opcional: Si deseas cambiar el color del texto al pasar el ratón por encima */
+.btn-link:hover {
+  color: #007bff; /* Cambia el color del texto al pasar el ratón por encima (ajusta según sea necesario) */
+  text-decoration: none; /* Asegura que no haya subrayado al pasar el ratón */
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .navbar {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.dark-mode .btn-primary {
+  background-color: #bb86fc;
+  border-color: #bb86fc;
+  color: #000;
+}
+
+.dark-mode .btn-secondary {
+  background-color: #03dac6;
+  border-color: #03dac6;
+  color: #000;
+}
+
+
+/**************/
+
+/* Estilo del contenedor del interruptor de tema */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilo del interruptor */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Ocultar el checkbox original */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Estilo del slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+/* Estilo del slider cuando el checkbox está activo */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+/* Estilo del slider cuando el checkbox está activo */
+input:checked + .slider {
+  background-color: #2196F3; /* Color para el modo oscuro */
+}
+
+/* Mueve el botón del slider a la derecha */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Estilo adicional para el slider */
+.slider.round {
+  border-radius: 34px;
+}
+
+/*********************/
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+}
+
+.menu-header a {
+  margin-right: 8px; /* Espacio entre el texto y el ícono */
+}
+
+.menu-header .fa {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Full viewport height for vertical centering */
+  position: absolute;
+  /* Position it over other elements */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Optional: semi-transparent background */
+  z-index: 1000;
+  /* Ensures it’s on top */
+}

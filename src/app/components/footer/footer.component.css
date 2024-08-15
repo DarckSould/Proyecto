@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+/*:::::Pie de Pagina*/
+.pie-pagina{
+    width: 100%;
+    background-color: #0a141d;
+
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: white;
+    border-radius: 50%; /* Ajusta el valor según tus preferencias */
+    margin-right: 0px; /* Agrega márgenes izquierdo y derecho de 20px */
+    margin-left: 0px;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    margin-left: 10%;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% */
+    height: auto; /* Ajusta la altura automáticamente */
+    object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+}
+
+
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .redes-sociales a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+}
+.pie-pagina .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+
+
+@media screen and (max-width: 940px) {
+    .pie-pagina .grupo-1 .box figure {
+        width: 90%;
+        border-radius: 60%; /* Ajusta el valor del border-radius */
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .pie-pagina .grupo-1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin: 0 auto; /* Centra el grupo-1 horizontalmente */
+        padding: 35px 0;
+    }
+
+    .pie-pagina .grupo-1 .box {
+        flex: 0 0 100%; /* Cambia el ancho de las cajas al 100% */
+        margin-bottom: 20px; /* Agrega margen inferior de 20px */
+    }
+
+    .pie-pagina .grupo-1 .box figure {
+        width: 60%; /* Ajusta el ancho de la figura al 80% */
+        margin: 0 auto; /* Centra la figura horizontalmente */
+        border-radius: 100%; /* Ajusta el valor del border-radius */
+
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .pie-pagina .grupo-1 .box figure {
+        width: 60%; /* Ajusta el ancho de la figura al 90% */
+    }
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .pie-pagina .grupo-1 .box figure {
+        width: 60%; /* Ajusta el ancho de la figura al 90% */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pie-pagina .grupo-1 .box figure {
+        width: 90%; /* Ajusta el ancho de la figura al 100% */
+    }
+}
+
+
+
+.redes-sociales {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .redes-sociales p {
+    margin-bottom: 10px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icon img {
+    width: 30px;
+    height: 30px;
+  }

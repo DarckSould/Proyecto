@@ -1,0 +1,77 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.izquierda {
+    background: whitesmoke;
+    height: auto;
+    width: 50%;
+    text-align: justify;
+}
+
+.derecha {
+    background-image: url(../../../assets/img/IMG3.jpeg);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+#pantalla-dividida {
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    margin-left: 30px;
+    margin-right: 30px;
+    color: black;
+    font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+    margin-left: 30px;
+    margin-right: 30px;
+    color: black;
+    font-family: 'Comfortaa', cursive;
+}
+
+/* Estilos responsivos */
+@media only screen and (max-width: 1080px) {
+
+    .izquierda,
+    .derecha {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        margin: 0;
+        /* Quita los márgenes */
+    }
+
+    .derecha {
+        height: 60vh;
+        width: 100%;
+    }
+
+    #pantalla-dividida {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .derecha {
+        height: 40vh;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .derecha {
+        height: 30vh;
+        width: 100%;
+    }
+}

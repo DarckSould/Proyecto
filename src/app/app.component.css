@@ -1,0 +1,58 @@
+/* app.component.css */
+
+/* General styling for header, footer, and wrapper */
+header {
+  width: 100%;
+}
+
+app-footer {
+  width: 100%;
+  text-align: center;
+  background-color: #f8f9fa; /* Fondo claro por defecto */
+  color: #000; /* Texto oscuro por defecto */
+}
+
+/* Ensure the wrapper takes up the remaining height of the viewport */
+.wrapper {
+  min-height: calc(100vh - 60px); /* Ajusta esto basado en la altura del footer */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho/alto */
+}
+
+/* Make sure the footer is at the bottom */
+app-footer {
+  margin-top: auto; /* Empuja el footer hacia el fondo */
+}
+
+/* Estilos para el modo oscuro */
+.dark-mode {
+  background-color: #18191a; /* Fondo oscuro para todo el cuerpo */
+  color: #e4e6eb; /* Texto claro */
+}
+
+.dark-mode .wrapper {
+  background-color: #242526; /* Fondo de la envoltura en modo oscuro */
+}
+
+.dark-mode app-footer {
+  background-color: #242526; /* Fondo del footer en modo oscuro */
+  color: #e4e6eb; /* Texto claro en el footer */
+}
+
+/* Asegúrate de que el fondo del body sea coherente en modo oscuro */
+body.dark-mode {
+  background-color: #18191a; /* Fondo oscuro para todo el cuerpo */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Diseño adaptativo */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 10px;
+  }
+}

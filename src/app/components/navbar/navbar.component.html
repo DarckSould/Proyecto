@@ -1,0 +1,76 @@
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg" [ngClass]="{ 'navbar-light bg-light': !isDarkMode, 'dark-mode': isDarkMode }">
+  <div class="container-fluid">
+
+    <!-- Contenedor de los botones alineados a la izquierda -->
+    <div class="d-flex justify-content-start ms">
+      <button class="btn btn-primary me-2" (click)="toggleSidebar()"><strong>MENU</strong></button>
+    </div>
+
+    <!-- Contenedor de los botones alineados a la derecha -->
+    <div class="d-flex justify-content-end ms-auto">
+      
+      <button class="btn btn-secondary me-3" (click)="onClick()">
+        <strong>LOGOUT</strong>
+      </button>
+
+      <div *ngIf="loading" class="spinner-container">
+          <app-spinner></app-spinner>
+      </div>
+      
+      <a href="/login" class="btn btn-secondary me-3" (click)="closeSidebar()">
+        <strong>LOGIN</strong>
+      </a>
+
+      <!-- Contenedor al switcher-->
+      <div class="theme-switcher">
+        <label class="switch">
+          <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDarkMode">
+          <span class="slider"></span>
+        </label>
+        <strong>{{ isDarkMode ? 'DARK MODE' : 'LIGHT MODE' }}</strong>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Contenedor principal -->
+ 
+<div class="d-flex" [ngClass]="{ 'dark-mode': isDarkMode }">
+  <!-- Sidebar -->
+  <div class="sidebar" [ngClass]="{ 'active': isActive, 'bg-light': !isDarkMode, 'dark-mode': isDarkMode }">
+    <button class="btn btn-light close-btn" (click)="closeSidebar()">X</button>
+    <h4 class="text-center py-3">Mi Menú</h4>
+    <ul class="list-unstyled">
+      <li>
+        <a class="btn btn-link" [routerLink]="['/home']" role="button">Inicio</a>
+      </li>
+      <li>
+        <div class="menu-header">
+          <a class="btn btn-link" [routerLink]="['/dashboard']" role="button">Dashboard</a>
+          <i class="fa"
+             [ngClass]="{'fa-chevron-down': activeSubMenu === 'dashboard', 'fa-chevron-up': activeSubMenu !== 'dashboard'}"
+             aria-hidden="true"
+             (click)="toggleSubMenu('dashboard', $event)"></i>
+        </div>
+        <ul *ngIf="activeSubMenu === 'dashboard'" class="sub-menu">
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="chart-section">Gráfico de Ventas</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="clients-section">Clientes</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="appointments-section">Citas</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="services-section">Servicios</a></li>
+        </ul>        
+      </li>
+      <li>
+        <a class="btn btn-link" [routerLink]="['/prices']" role="button">Precios</a>
+      </li>
+      <li>
+        <a class="btn btn-link" [routerLink]="['/disabled']" role="button">Deshabilitado</a>
+      </li>
+    </ul>
+    
+  </div>
+
+  <!-- Overlay (opcional) -->
+  <div *ngIf="isActive" class="overlay" (click)="closeSidebar()"></div>
+</div>

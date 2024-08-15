@@ -1,1 +1,210 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos generales */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+
+body.dark-mode {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #18191a !important;
+}
+
+/* Estilos para el modo oscuro global */
+.dark-mode {
+    background-color: #18191a !important;
+    /* Fondo oscuro general */
+    color: #ffffff !important;
+    /* Texto claro */
+}
+
+.dark-mode .wrapper {
+    background-color: #242526 !important;
+    /* Fondo más claro que el de la página principal */
+    color: #ffffff !important;
+    /* Texto claro */
+}
+
+.dark-mode .header {
+    background-color: #242526 !important;
+    /* Fondo del encabezado */
+}
+
+.dark-mode .navbar {
+    background-color: #242526 !important;
+    /* Fondo de la barra de navegación */
+    border-bottom: 1px solid #3a3b3c !important;
+    /* Línea inferior de la barra de navegación */
+}
+
+.dark-mode .btn-primary {
+    background-color: #3b5998 !important;
+    /* Azul oscuro similar a Facebook */
+    border-color: #3b5998 !important;
+    /* Borde del botón */
+    color: #ffffff !important;
+    /* Texto blanco */
+}
+
+.dark-mode .btn-secondary {
+    background-color: #1877f2 !important;
+    /* Azul de Facebook */
+    border-color: #1877f2 !important;
+    /* Borde del botón */
+    color: #ffffff !important;
+    /* Texto blanco */
+}
+
+.dark-mode .button-with-margin {
+    background-color: #3b5998 !important;
+    /* Azul oscuro similar a Facebook */
+    color: #ffffff !important;
+    /* Texto blanco */
+}
+
+.dark-mode .button-with-margin:hover {
+    background-color: #333333 !important;
+    /* Fondo oscuro al pasar el ratón */
+    color: #ffffff !important;
+    /* Texto blanco */
+}
+
+.dark-mode .spinner-container {
+    background-color: rgba(24, 25, 26, 0.8) !important;
+    /* Fondo semi-transparente */
+}
+
+/* Estilos específicos para el contenido en modo oscuro */
+.dark-mode .content,
+.dark-mode .content-container {
+    background-color: #242526 !important;
+    /* Fondo del contenido oscuro */
+}
+
+.dark-mode .chart-container,
+.dark-mode .table-container {
+    background-color: #333 !important;
+    /* Fondo de las secciones oscuras */
+}
+
+.dark-mode .section-title {
+    color: #ffffff !important;
+    /* Títulos de secciones claros */
+}
+
+.dark-mode .table {
+    color: #ffffff !important;
+    /* Texto en la tabla */
+}
+
+.dark-mode .table th,
+.dark-mode .table td {
+    border-bottom: 1px solid #444 !important;
+    /* Borde de las celdas de la tabla */
+}
+
+.dark-mode .table tr:hover {
+    background-color: #444 !important;
+    /* Fondo de las filas al pasar el ratón */
+}
+
+.dark-mode .dashboard-title {
+    font-size: 2rem !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    /* Títulos del dashboard */
+}
+
+/* Asegura que el fondo del body y html también se apliquen correctamente */
+.dark-mode body {
+    background-color: #242526 !important;
+    /* Fondo oscuro general */
+}
+
+.dark-mode html {
+    background-color: #242526 !important;
+    /* Fondo oscuro general */
+}
+
+.dark-mode .footer {
+    background-color: #18191a !important;
+    color: #e4e6eb !important;
+}
+
+/* Dark mode specific styles */
+.dark-mode app-footer {
+    background-color: #18191a !important;
+    /* Dark background for dark mode */
+    color: #e4e6eb !important;
+    /* Light text for dark mode */
+}
+
+.dark-mode .izquierda {
+    background-color: #333 !important;
+    /* Fondo oscuro */
+    color: #e4e6eb !important;
+    /* Texto claro */
+}
+
+.dark-mode p {
+    background-color: none !important;
+    /* Fondo oscuro */
+    color: #e4e6eb !important;
+    /* Texto claro */
+    text-decoration: none;
+}
+
+.dark-mode h1 {
+    background-color: none !important;
+    /* Fondo oscuro */
+    color: #ffffff !important;
+    /* Texto claro */
+    text-decoration: none;
+}
+
+.dark-mode label {
+    background-color: none !important;
+    /* Fondo oscuro */
+    color: #000000 !important;
+    /* Texto claro */
+    text-decoration: none;
+}
+
+.dark-mode form {
+    background-color: #333 !important;
+    /* Fondo oscuro */
+    color: #000000 !important;
+    /* Texto claro */
+    text-decoration: none;
+}
+
+/*****************************/
+
+/* Modo oscuro */
+.dark-mode .filters {
+    background-color: #333 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  .dark-mode .filter-group label {
+    color: #f8f9fa !important;
+  }
+  
+  .dark-mode .filter-group select {
+    border: 1px solid #444 !important;
+    background-color: #444 !important;
+    color: #f8f9fa !important;
+  }
+  
+  .dark-mode .filter-group select:focus {
+    border-color: #17a2b8 !important;
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5) !important;
+  }
+  
+  .dark-mode .filter-group select option {
+    background-color: #444 !important;
+    color: #f8f9fa !important;
+  }
+
+  
