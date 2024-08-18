@@ -4,12 +4,23 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 250px;
   background-color: #f8f9fa;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 1000;
+}
+
+
+.sidebar {
+  width: 250px; /* Ajusta el ancho según sea necesario */
+  padding: 0.5rem;
+  background-color: var(--sidebar-bg-color, #f8f9fa); /* Puedes ajustar el color de fondo según tu tema */
+
+}
+
+.sidebar .user-profile-container {
+  margin-bottom: 0rem; /* Ajusta el margen según sea necesario */
 }
 
 .sidebar.active {
@@ -52,6 +63,7 @@
 .btn-link {
   text-decoration: none; /* Elimina el subrayado */
   color: inherit; /* Asegura que el color del texto sea el mismo que el color de texto del contenedor */
+  
 }
 
 /* Opcional: Si deseas cambiar el color del texto al pasar el ratón por encima */
@@ -181,3 +193,4 @@ input:checked + .slider:before {
   z-index: 1000;
   /* Ensures it’s on top */
 }
+

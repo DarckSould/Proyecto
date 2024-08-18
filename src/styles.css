@@ -163,6 +163,14 @@ body.dark-mode {
     text-decoration: none;
 }
 
+.dark-mode h2 {
+    background-color: none !important;
+    /* Fondo oscuro */
+    color: #ffffff !important;
+    /* Texto claro */
+    text-decoration: none;
+}
+
 .dark-mode label {
     background-color: none !important;
     /* Fondo oscuro */
@@ -176,7 +184,17 @@ body.dark-mode {
     /* Fondo oscuro */
     color: #000000 !important;
     /* Texto claro */
-    text-decoration: none;
+    text-decoration: none !important; 
+    
+}
+
+.dark-mode .formulario {
+    background-color: #333 !important;
+    /* Fondo oscuro */
+    color: #000000 !important;
+    /* Texto claro */
+    text-decoration: none !important; 
+    
 }
 
 /*****************************/
@@ -207,4 +225,24 @@ body.dark-mode {
     color: #f8f9fa !important;
   }
 
+
+
+/* Additional styles for dark mode */
+.dark-mode .transparent-bg {
+    background-color: #242526 !important;
+    /* Fondo oscuro */
+    color: #242526 !important;
+    /* Texto claro */
+    text-decoration: none !important; 
+
+}
+
+.dark-mode .user-profile-container {
+    background-color: var(--dark-profile-bg-color, #343a40) !important; /* Fondo en modo oscuro */
+    border-bottom: 1px solid var(--dark-border-color, #495057) !important; /* Color del borde en modo oscuro */
+  }
   
+  .dark-mode .user-profile-container h4,
+  .dark-mode .user-profile-container p {
+    color: var(--dark-text-color, #f8f9fa) !important; /* Color del texto en modo oscuro */
+  }

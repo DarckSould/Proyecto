@@ -35,14 +35,7 @@ export class RegisterComponent implements OnInit {
     const password = this.registrarUsuario.value.password;
     const repetirPassowrd = this.registrarUsuario.value.repetirPassword;
 
-    console.log(this.registrarUsuario);
-    if (password !== repetirPassowrd) {
-      this.toastr.error(
-        'Las contraseñas ingresadas deben ser las mismas',
-        'Error'
-      );
-      return;
-    }
+
 
     this.loading = true;
     this.afAuth

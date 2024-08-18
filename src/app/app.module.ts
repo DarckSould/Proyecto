@@ -33,6 +33,8 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
+import { ContactanosComponent } from './components/contactanos/contactanos.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 
@@ -51,6 +53,8 @@ import { ReservasComponent } from './components/reservas/reservas.component';
     RecuperarPasswordComponent,
     VerificarCorreoComponent,
     ReservasComponent,
+    ContactanosComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

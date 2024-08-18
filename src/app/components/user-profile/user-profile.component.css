@@ -1,0 +1,17 @@
+/* src/app/user-profile/user-profile.component.css */
+.user-profile-container {
+    padding: 1rem;
+    background-color: var(--sidebar-bg-color, #f8f9fa); /* Puedes ajustar el color de fondo según tu tema */
+    border-bottom: 1px solid #ddd; /* Opcional: para separar el perfil del resto del contenido */
+  }
+  
+  .user-profile-container h4 {
+    margin-bottom: 1rem;
+  }
+  
+  .user-profile-container p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color, #333); /* Ajusta el color del texto según tu tema */
+  }
+  

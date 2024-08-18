@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
+import { ContactanosComponent } from './components/contactanos/contactanos.component';
 
 
 const routes: Routes = [
@@ -30,10 +31,15 @@ const routes: Routes = [
     component:RegisterComponent, ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
 
+  {
+    path:"reservas",
+    component:ReservasComponent, ...canActivate(() => redirectUnauthorizedTo(['/login'])),
+  },
+
 
   {path:"recuperar-password",component:RecuperarPasswordComponent},
   {path:"verificar-correo",component:VerificarCorreoComponent},
-  {path:"reservas",component:ReservasComponent},
+  {path:"contactanos",component:ContactanosComponent},
 
 
 

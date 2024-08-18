@@ -109,7 +109,7 @@ body {
 /* Estilos para Filtros */
 .filters {
   padding: 1rem;
-  background-color: #f8f9fa; /* Color de fondo suave */
+  background-color: #ffffff; /* Color de fondo suave */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   margin-bottom: 1rem; /* Espacio inferior */
@@ -134,7 +134,7 @@ body {
   border-radius: 4px; /* Bordes redondeados */
   font-size: 1rem; /* Tamaño de fuente */
   box-sizing: border-box; /* Incluye padding y border en el ancho total */
-  background-color: #fff; /* Fondo blanco para el select */
+  background-color: #f8f9fa; /* Fondo blanco para el select */
   appearance: none; /* Elimina el estilo por defecto del navegador */
 }
 

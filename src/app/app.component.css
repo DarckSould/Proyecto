@@ -48,8 +48,6 @@ body.dark-mode {
   padding: 0;
 }
 
-
-
 /* Diseño adaptativo */
 @media (max-width: 768px) {
   .wrapper {

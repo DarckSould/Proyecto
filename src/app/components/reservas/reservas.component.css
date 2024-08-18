@@ -1,62 +1,156 @@
-  body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-  }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
 
-  div {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 5px;
-  }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-  form {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-bottom: 30px;
-  }
+h1,
+h2 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
 
-  div>div {
-      margin-bottom: 15px;
-  }
+.transparent-bg {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
 
-  label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #555;
-  }
+.form-floating label {
+    color: #555;
+    font-weight: 500;
+}
 
-  input[type="text"],
-  input[type="email"],
-  input[type="date"],
-  input[type="number"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-  }
 
-  button[type="submit"] {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  }
 
-  button[type="submit"]:hover {
-      background-color: #0056b3;
-  }
+.form-control:focus,
+.form-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
 
-  input:focus {
-      border-color: #007bff;
-      outline: none;
-  }
+.btn {
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 91, 187, 0.4);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    margin: 20px 0;
+}
+
+.section {
+    display: inline-block;
+    width: 100%;
+    scroll-snap-align: start;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    min-width: 320px;
+    flex-shrink: 0;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-button:hover {
+    opacity: 1;
+}
+
+.scroll-button.left {
+    left: -20px;
+}
+
+.scroll-button.right {
+    right: -20px;
+}
+
+.filter-group select option {
+    background-color: #fff;
+    color: #333;
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Ajustar la posición del label para el select dentro de un form-floating */
+.form-floating select {
+    padding-top: 1.625rem; /* Asegura que el contenido no se superponga */
+    padding-bottom: 0.625rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .scroll-container {
+        margin: 10px 0;
+    }
+
+    .scroll-button {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+}

@@ -6,18 +6,18 @@
     <div class="d-flex justify-content-start ms">
       <button class="btn btn-primary me-2" (click)="toggleSidebar()"><strong>MENU</strong></button>
     </div>
-
+   
     <!-- Contenedor de los botones alineados a la derecha -->
     <div class="d-flex justify-content-end ms-auto">
-      
+
       <button class="btn btn-secondary me-3" (click)="onClick()">
         <strong>LOGOUT</strong>
       </button>
 
       <div *ngIf="loading" class="spinner-container">
-          <app-spinner></app-spinner>
+        <app-spinner></app-spinner>
       </div>
-      
+
       <a href="/login" class="btn btn-secondary me-3" (click)="closeSidebar()">
         <strong>LOGIN</strong>
       </a>
@@ -36,39 +36,55 @@
 </nav>
 
 <!-- Contenedor principal -->
- 
+
 <div class="d-flex" [ngClass]="{ 'dark-mode': isDarkMode }">
   <!-- Sidebar -->
   <div class="sidebar" [ngClass]="{ 'active': isActive, 'bg-light': !isDarkMode, 'dark-mode': isDarkMode }">
     <button class="btn btn-light close-btn" (click)="closeSidebar()">X</button>
-    <h4 class="text-center py-3">Mi Menú</h4>
+    <h4 class="text-center py-3">MI MENÚ</h4>
+    <app-user-profile></app-user-profile>
+
     <ul class="list-unstyled">
       <li>
-        <a class="btn btn-link" [routerLink]="['/home']" role="button">Inicio</a>
+        <a class="btn btn-link" [routerLink]="['/home']" role="button">INICIO</a>
       </li>
+
       <li>
         <div class="menu-header">
-          <a class="btn btn-link" [routerLink]="['/dashboard']" role="button">Dashboard</a>
+          <a class="btn btn-link" [routerLink]="['/dashboard']" role="button">DASHBOARD</a>
           <i class="fa"
-             [ngClass]="{'fa-chevron-down': activeSubMenu === 'dashboard', 'fa-chevron-up': activeSubMenu !== 'dashboard'}"
-             aria-hidden="true"
-             (click)="toggleSubMenu('dashboard', $event)"></i>
+            [ngClass]="{'fa-chevron-down': isSubMenuActive('dashboard'), 'fa-chevron-up': !isSubMenuActive('dashboard')}"
+            aria-hidden="true" (click)="toggleSubMenu('dashboard', $event)">
+          </i>
         </div>
-        <ul *ngIf="activeSubMenu === 'dashboard'" class="sub-menu">
-          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="chart-section">Gráfico de Ventas</a></li>
-          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="clients-section">Clientes</a></li>
-          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="appointments-section">Citas</a></li>
-          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="services-section">Servicios</a></li>
-        </ul>        
+        <ul *ngIf="isSubMenuActive('dashboard')" class="sub-menu">
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="chart-section">GRÁFICO DE VENTAS</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="clients-section">CLIENTES</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="appointments-section">CITAS</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/dashboard']" fragment="services-section">SERVICIOS</a></li>
+        </ul>
       </li>
+
       <li>
-        <a class="btn btn-link" [routerLink]="['/prices']" role="button">Precios</a>
+        <div class="menu-header">
+          <a class="btn btn-link" [routerLink]="['/reservas']" role="button">RESERVAS</a>
+          <i class="fa"
+            [ngClass]="{'fa-chevron-down': isSubMenuActive('reservas'), 'fa-chevron-up': !isSubMenuActive('reservas')}"
+            aria-hidden="true" (click)="toggleSubMenu('reservas', $event)">
+          </i>
+        </div>
+        <ul *ngIf="isSubMenuActive('reservas')" class="sub-menu">
+          <li><a class="btn btn-link" [routerLink]="['/reservas']" fragment="appointments">GESTIONAR CITAS</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/reservas']" fragment="clients">GESTIONAR CLIENTES</a></li>
+          <li><a class="btn btn-link" [routerLink]="['/reservas']" fragment="services">GESTIONAR SERVICIOS</a></li>
+        </ul>
       </li>
+
       <li>
-        <a class="btn btn-link" [routerLink]="['/disabled']" role="button">Deshabilitado</a>
+        <a class="btn btn-link" [routerLink]="['/contactanos']" role="button">CONTACTENOS</a>
       </li>
     </ul>
-    
+
   </div>
 
   <!-- Overlay (opcional) -->

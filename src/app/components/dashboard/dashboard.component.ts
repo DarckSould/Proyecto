@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart, registerables } from 'chart.js';
 
+
 Chart.register(...registerables);
 
 @Component({
@@ -100,42 +101,56 @@ export class DashboardComponent implements OnInit {
   }
 
   renderChart(): void {
-    let url = 'http://localhost:3000/ventas/mes';
+    let url = 'http://localhost:3000/ventas/mes'; // Asegúrate de que esta URL sea correcta
     if (this.currentMonth) {
-      url += `?month=${this.currentMonth}`;
+        url += `?month=${this.currentMonth}`;
     }
 
-    this.http.get<any[]>(url).subscribe(data => {
-      const ctx = document.getElementById('salesChart') as HTMLCanvasElement;
+    this.http.get<any[]>(url).subscribe({
+        next: data => {
+            if (Array.isArray(data) && data.length > 0) {
+                const ctx = document.getElementById('salesChart') as HTMLCanvasElement;
 
-      if (this.chart) {
-        this.chart.destroy();
-      }
+                if (this.chart) {
+                    this.chart.destroy();
+                }
 
-      this.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: data.map(d => d.mes),
-          datasets: [{
-            label: 'Ventas',
-            data: data.map(d => parseInt(d.total, 10)),
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            x: {
-              beginAtZero: true
-            },
-            y: {
-              beginAtZero: true
+                this.chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(d => d.mes),
+                        datasets: [{
+                            label: 'Citas',
+                            data: data.map(d => {
+                                const value = parseInt(d.total, 10);
+                                return isNaN(value) ? 0 : value;
+                            }),
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                beginAtZero: true
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.error('Datos inválidos para el gráfico:', data);
             }
-          }
+        },
+        error: err => {
+            console.error('Error al obtener datos del gráfico:', err);
         }
-      });
     });
-  }
+}
+
+  
 }

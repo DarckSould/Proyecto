@@ -16,6 +16,7 @@ export class NavbarComponent  implements OnInit{
 
 
   @ViewChild('dashboardContent') dashboardContent!: ElementRef;
+  activeSubMenus: string[] = [];
 
 
   isActive = false;
@@ -72,22 +73,36 @@ export class NavbarComponent  implements OnInit{
     this.closeSidebar();
   }
 
+
   toggleSubMenu(submenu: string, event: MouseEvent): void {
     event.stopPropagation(); // Evita que el clic en el ícono propague el evento
-    if (this.activeSubMenu === submenu) {
-      this.activeSubMenu = null; // Colapsa el submenú si ya está abierto
-    } else {
-      this.activeSubMenu = submenu; // Expande el submenú
-    }
-  }
 
-  ngOnInit(): void {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
+    const index = this.activeSubMenus.indexOf(submenu);
+    if (index === -1) {
+        // Si el submenú no está activo, lo agrega al array
+        this.activeSubMenus.push(submenu);
+    } else {
+        // Si el submenú ya está activo, lo elimina del array
+        this.activeSubMenus.splice(index, 1);
+    }
+}
+
+isSubMenuActive(submenu: string): boolean {
+    return this.activeSubMenus.includes(submenu);
+}
+
+
+
+ngOnInit(): void {
+  this.route.fragment.subscribe(fragment => {
+    if (fragment) {
+      // Agregar un pequeño retraso antes de hacer scroll
+      setTimeout(() => {
         this.scrollTo(fragment);
-      }
-    });
-  }
+      }, 100); // Ajusta el tiempo según sea necesario
+    }
+  });
+}
 
   scrollTo(sectionId: string): void {
     const element = document.getElementById(sectionId);
